@@ -1,0 +1,23 @@
+<!--  Demos -->
+{{!-- <section id="demos"> --}}
+<div class="large-12 columns">
+    <div class="owl-carousel owl-theme">
+        {{#each products}}
+        <div class="item">
+            <img class="card-img-top" 
+                src="{{imgPath}}" 
+                height="500px" 
+                alt="{{name}}"
+                style="object-fit: cover;width: 100%;height: 440px;">
+        </div>
+        {{/each}}
+        
+    </div>
+
+    {{!-- <script>
+        $(document).ready(function () {
+            
+        })
+    </script> --}}
+</div>
+{{!-- </section> --}}

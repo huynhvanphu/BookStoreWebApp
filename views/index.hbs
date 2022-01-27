@@ -1,0 +1,54 @@
+{{>carousel}}
+
+<div class="container bg-light" style="content:'';clear:both;display:table;">
+    <div class="row mt-3">
+        <div class="parent">
+            <div class="child">
+                <span>Science</span>
+            </div>
+        </div>
+        <div class="parent">
+            <div class="child">
+                <span>Detective</span>
+            </div>
+        </div>
+        <div class="parent">
+            <div class="child">
+                <span>HiTech</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+ <div class="container">
+    <div class="row" style="max-width: none;">
+        {{#each products}}
+        <div class="col-md-4 col-lg-3 my-3">
+            <div class="card">
+                <a href="/products/{{id}}" alt="Click to view details">
+                    <img class="card-img-top" src="{{imgPath}}" height="440px" alt="{{name}}"
+                        style="object-fit: cover;width: 100%;height: 440px;">
+                    <!--Keep image fixed ratio-->
+                </a>
+                <div class="card-body">
+                    <h4 class="card-title">{{name}}</h4>
+                    <p class="card-text">{{summary}}</p>
+                </div>
+                <div class="card-footer">
+                    <div class="text-left pull-left price">${{price}}</div>
+                    <a class="btn btn-success btn-sm add-to-cart" style="float:right;" href="#" role="button"
+                        data-product="{{id}}">Add
+                        to cart</a>
+                </div>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+ </div>
+    {{#if hasPagination}}
+    <div class="row mt-3">
+            {{#paginate pagination leftText="Prev" rightText="Next"}}
+            {{/paginate}}
+    </div>
+    {{/if}}
+ 

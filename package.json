@@ -1,0 +1,30 @@
+{
+  "dependencies": {
+    "@handlebars/allow-prototype-access": "^1.0.5",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.1",
+    "bootstrap": "^5.1.3",
+    "cookie-parser": "^1.4.6",
+    "express": "^4.17.2",
+    "express-handlebars": "^6.0.2",
+    "express-handlebars-paginate": "^1.0.3",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.14.0",
+    "jquery": "^3.6.0",
+    "pg": "^8.7.1",
+    "pg-hstore": "^2.3.4",
+    "popper.js": "^1.16.1",
+    "sequelize": "^6.12.1",
+    "sequelize-cli": "^6.3.0"
+  },
+  "name": "bookstoreapp",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

@@ -1,0 +1,9 @@
+
+{{#if errors}}
+<h3 class="text-danger">Errors</h3>
+<ul class="bg-danger text-white">
+    {{#each errors}}
+    <li>{{msg}}</li>
+    {{/each}}
+</ul>
+{{/if}}

@@ -1,0 +1,76 @@
+
+{{#if isNullCart}}
+<div class="container py-5 text-danger">
+    <div class="row">
+        <h1>Your current cart is empty</h1>
+    </div>
+</div>
+{{else}}
+{{> steps}}
+<div class="container my-5">
+    <div class="row" style="justify-content: center;">
+        <div class="col-sm-12 col-md-10 col-md-offset-1">
+            <table class="table table-hover">
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th class="text-center">Price</th>
+                        <th class="text-center">Total</th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each items}}
+                    <tr>
+                        <td class="col-sm-8 col-md-6">
+                            <div class="media">
+                                <a class="thumbnail pull-left" href="#"> <img class="media-object"
+                                        src="{{item.imgPath}}" style="width: 72px;"> </a>
+                                <div class="media-body">
+                                    <h4 class="media-heading">{{item.name}}</h4>
+                                    <h5 class="media-heading">Brand name</h5>
+                                    <span>Status: </span><span class="text-success"><strong>In Stock</strong></span>
+                                </div>
+                            </div>
+                        </td>
+                        <td class="col-sm-1 col-md-1" style="text-align: center">
+                            <input type="email" class="form-control" id="quantity{{item.id}}" value="{{quantity}}">
+                        </td>
+                        <td class="col-sm-1 col-md-1 text-center"><strong>${{item.price}}</strong></td>
+                        <td class="col-sm-1 col-md-1 text-center"><strong>${{price}}</strong></td>
+                        <td class="col-sm-1 col-md-1">
+                            <div style="display:flex;">
+                                <form class="form-cart-item-update" data-id="{{item.id}}">
+                                    <button type="submit" class="btn btn-outline-success btn-update">
+                                        <i class="fas fa-pen"></i>
+                                    </button>
+                                </form>
+                                <button type="button" class="btn btn-danger mx-1 btn-cart-remove" data-id="{{item.id}}">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    {{/each}}
+                    <tr class="text-center display-6">
+                        <td></td>
+                        <td></td>
+                        <td><strong>Total</strong></td>
+                        <td><strong>${{totalPrice}}</strong></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">
+                            <a class="w-100 btn btn-warning btn-lg" href="/">Continue shopping</a>
+                        </td>
+                        <td colspan="2">
+                            <a class="w-100 btn btn-primary btn-lg" href="/cart/billing">Checkout</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{{/if}}

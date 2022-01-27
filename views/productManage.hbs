@@ -1,0 +1,68 @@
+<div class="container-fluid my-3">
+    <div class="row">
+        {{> adminBar}}
+        <div class="col-md-9">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-2 border-right">
+                            <h4>Product</h4>
+                        </div>
+                        <div class="col-md-6">
+                            <button type="button" class="btn btn-sm btn-primary">Add Product</button>
+                        </div>
+
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table class="table table-hover ">
+                                <thead class="bg-light ">
+                                    <tr>
+                                        <th>
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input" value="">
+                                                </label>
+                                            </div>
+                                        </th>
+                                        <th>Name</th>
+                                        <th>Imgage Path</th>
+                                        <th>Summary</th>
+                                        <th>Description</th>
+                                        <th>Price</th>
+                                        <th>Last update</th>
+                                        <th>Edit</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {{#each products}}
+                                    <tr>
+                                        <td>
+                                            <div class="form-check-inline">
+                                                <label class="form-check-label">
+                                                    <input type="checkbox" class="form-check-input" value="">
+                                                </label>
+                                            </div>
+                                        </td>
+                                        <td><small>{{name}}</small></td>
+                                        <td><small>{{imgPath}}</small></td>
+                                        <td><small>{{summary}}</small></td>
+                                        <td><small>{{description}}</small></td>
+                                        <td><small>{{price}}</small></td>
+                                        <td><small>{{formatDate updatedAt}}</small></td>
+                                        <td>
+                                            <a href="#"><i class="fa fa-pencil-square-o"></i></a>
+                                            <a href="#"><i class="fa fa-eye"></i></a>
+                                            <a href="#"><i class="fa fa-trash"></i></a>
+                                        </td>
+                                    </tr>
+                                    {{/each}}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
